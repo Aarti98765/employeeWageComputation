@@ -1,16 +1,11 @@
 import java.util.*;
 import java.util.Scanner;
-//CREATED THE INTERFACE
-interface IempWageBuilder {
-	public void empWageComputation();
-	public void displayEmpWage();
-}
 //CREATED CLASS EMPWAGEUC10
 public class empWageUC10 {
 	public static final int IS_PART_TIME = 1;
 	public static final int IS_FULL_TIME = 2;
 	public static final int COMPANIES_COUNT = 3;
-	public void empWageComputation(companyEmpWage company) {
+	public static void empWageComputation(companyEmpWage company) {
 		int empHrs = 0;
 	   	int empWage = 0;
 	   	int totalWage = 0;
@@ -36,7 +31,7 @@ public class empWageUC10 {
 	  	}
 		displayEmpWage(totalWage);
 	}
-	public void displayEmpWage(int totalWage) {
+	public static void displayEmpWage(int totalWage) {
 	  		System.out.println("Company");
       			System.out.println("Total wage of employees:" + totalWage);
 			System.out.println("");
