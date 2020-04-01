@@ -17,8 +17,8 @@ public class empWageUC14 implements IempWageBuilder {
 	   	int totalWage = 0;
 	   	int totalEmpHrs = 0;
 	 	int totalWorkingDays = 0;
-		while (totalEmpHrs <= empObj.getMonthMaxHrs() && 
-           	       totalWorkingDays < empObj.getWorkingDaysEmp()) { 
+		while (totalEmpHrs <= empObj.obtainMonthMaxHrs() && 
+           	       totalWorkingDays < empObj.obtainWorkingDaysEmp()) { 
 			int empCheck = (int) Math.floor(Math.random() * 10) % 3;
 			totalWorkingDays++;
 			totalEmpHrs++;
@@ -32,7 +32,7 @@ public class empWageUC14 implements IempWageBuilder {
 			   	default :
 					empHrs= 0;
 			}
-			empWage = empHrs * empObj.getRateOfEmp();
+			empWage = empHrs * empObj.obtainRateOfEmp();
 			dailyWage.add(empWage);
 			totalWage=totalWage+empWage;
 	        }
@@ -71,13 +71,13 @@ class companyEmpWage {
          	numWorkingDays = numOfWorkingDays;
          	empRatePerHr = empRatePerHrs;    
         } 	 
-	public int getRateOfEmp() {	
+	public int obtainRateOfEmp() {	
 		return maxHrsInMonth;
 	}
-	public int getWorkingDaysEmp() {
+	public int obtainWorkingDaysEmp() {
 		return numWorkingDays;
 	}
-	public int getMonthMaxHrs() {
+	public int obtainMonthMaxHrs() {
 		return empRatePerHr;
 	}
 }
