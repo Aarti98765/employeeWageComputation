@@ -15,8 +15,8 @@ public class empWageUC10 {
 	   	int totalWage = 0;
 	   	int totalEmpHrs = 0;
 	 	  	int totalWorkingDays = 0;
-			while (totalEmpHrs <= company.getMonthMaxHrs() && 
-           	   totalWorkingDays < company.getWorkingDaysEmp()) { 
+			while (totalEmpHrs <= company.obatinMonthMaxHrs() && 
+           	   totalWorkingDays < company.obtainWorkingDaysEmp()) { 
 					int empCheck = (int) Math.floor(Math.random() * 10) % 3;
 					totalWorkingDays++;
 					totalEmpHrs++;
@@ -30,7 +30,7 @@ public class empWageUC10 {
 			   		default :
 								empHrs= 0;
 					}
-					empWage = empHrs * company.getRateOfEmp();
+					empWage = empHrs * company.obtainRateOfEmp();
 					totalWage=totalWage+empWage;
 	  		}
 			displayEmpWage(totalWage);
@@ -60,27 +60,27 @@ public class empWageUC10 {
 
 class companyEmpWage {
 	private int  maxHrsInMonth = 0;
-   private int  numWorkingDays = 0;
-   private int  empRatePerHr  = 0;
+   	private int  numWorkingDays = 0;
+   	private int  empRatePerHr  = 0;
 	companyEmpWage(int maxHrsMonth, int numOfWorkingDays, int empRatePerHrs) {
          maxHrsInMonth = maxHrsMonth;
          numWorkingDays = numOfWorkingDays;
          empRatePerHr = empRatePerHrs;    
    } 	 
 	
-	public int getRateOfEmp() {
+	public int obtainRateOfEmp() {
 
 			return maxHrsInMonth;
 
 	}
 
-	public int getWorkingDaysEmp() {
+	public int obtainWorkingDaysEmp() {
 
 			return numWorkingDays;
 
 	}
 
-	public int getMonthMaxHrs() {
+	public int obtainMonthMaxHrs() {
 
 			return empRatePerHr;
 
